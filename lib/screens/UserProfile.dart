@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -10,21 +11,16 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        leading: Icon(Icons.arrow_back_ios),
+      ),
       body: ListView(
         children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(
-                height: size.height * 0.01,
-              ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Padding(
-                  padding: EdgeInsets.all(15.0),
-                  child: Icon(Icons.arrow_back),
-                ),
-              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -52,11 +48,15 @@ class _ProfilePageState extends State<ProfilePage> {
                   )
                 ],
               ),
-              Image.asset(
-                'lib/imagesassets/n2nbg.png',
-                height: size.height * 0.3,
+              Padding(
+                padding: const EdgeInsets.all(25.0),
+                child: SvgPicture.asset(
+                  'lib/imagesassets/male_avatar.svg',
+                  height: 200.0,
+                  width: 200.0,
+                ),
               ),
-              //branch editorrating numberofblogs year clubs toparticles social media acounts
+              //branch editor rating number of blogs year clubs top articles social media acounts
               Padding(
                 padding: const EdgeInsets.fromLTRB(70, 15, 70, 15),
                 child: Container(
@@ -76,7 +76,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 height: 15,
                               ),
                               Text(
-                                'branch', //this is varible
+                                'branch', //this is variable
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                 ),

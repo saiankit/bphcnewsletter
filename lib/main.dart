@@ -1,18 +1,17 @@
 import 'package:bphcnewsletter/AddFields.dart';
 import 'package:bphcnewsletter/HomePage.dart';
-import 'package:bphcnewsletter/UserProfile.dart';
+import 'package:bphcnewsletter/screens/UserProfile.dart';
 import 'package:bphcnewsletter/clubpass.dart';
 import 'package:bphcnewsletter/letterEditor.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         brightness: Brightness.dark,
